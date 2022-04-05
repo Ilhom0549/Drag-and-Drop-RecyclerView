@@ -1,7 +1,6 @@
 package uz.ilkhomkhuja.draganddroprecyclerview.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
@@ -18,8 +17,9 @@ class SongAdapter @Inject constructor() : ListAdapter<SongData, SongAdapter.Vh>(
 
     var onLongClickListener: ((RecyclerView.ViewHolder) -> Unit)? = null
 
-    inner class Vh(var itemSongBinding: ItemSongBinding) :
+    inner class Vh(private var itemSongBinding: ItemSongBinding) :
         RecyclerView.ViewHolder(itemSongBinding.root) {
+
         fun onBind(songData: SongData) {
             itemSongBinding.apply {
                 authorNameTv.text = songData.authorName
