@@ -81,5 +81,4 @@ class CustomItemTouchHelper(
     override fun isItemViewSwipeEnabled(): Boolean {
         return true
     }
-
 }
